@@ -10,12 +10,12 @@ var racerArray = [
     },
     {
         name: "Racer2",
-        src: "Images/Car2.png",
+        source: "Images/Car2.png",
         raceSpeed: 0
     },
     {
         name: "Racer3",
-        src: "Images/Car.png",
+        source: "Images/Car.png",
         raceSpeed: 0
     }
 ]
