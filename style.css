@@ -1,16 +1,18 @@
 .raceArea {
     background-color: lightgray;
     height: 300px;
+    position: relative;
 }
 
-.racer1 {
-    
+#racer1 {
+    padding-left: 5px;
+    position: absolute;
 }
 
-.racer2 {
+#racer2 {
 
 }
 
-.racer3 {
-    
+#racer3 {
+
 }
