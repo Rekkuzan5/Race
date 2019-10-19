@@ -1,21 +1,18 @@
-var racer1Speed = 0;
-var racer2Speed = 0;
-var racer3Speed = 0;
 
 var racerArray = [
     {
-        name: "Racer1",
+        name: "Blue",
         source: "Images/Car.png",
         raceSpeed: 0
     },
     {
-        name: "Racer2",
+        name: "Red",
         source: "Images/Car2.png",
         raceSpeed: 0
     },
     {
-        name: "Racer3",
-        source: "Images/Car.png",
+        name: "Green",
+        source: "Images/Car3.png",
         raceSpeed: 0
     }
 ]
@@ -28,21 +25,60 @@ function displayRacers() {
 
 function startRace() {
     //var active = false;
-    var distance = 0;
-    var image = document.getElementById("racer1");
+    var stoplight = document.getElementById("stoplight");
+    stoplight.src = "Images/green.png";
+    var stoplight2 = document.getElementById("stoplight2");
 
-        var frames = setInterval(movement, 100);
+    var distance = 0;
+    var racer1Image = document.getElementById("racer1");
+    var racer2Image = document.getElementById("racer2");
+    var racer3Image = document.getElementById("racer3");
+
+        var frames = setInterval(movement, 20);
         function movement()
         {
             
-            if (distance < 500)
+            if (racerArray[0].racerSpeed < 750 || racerArray[1].raceSpeed <750 || racerArray[2].raceSpeed < 750)
             {
-                var x = Math.floor(Math.random() * 11);
-                distance = racer1Speed += x;      
-                image.style.left = racer1Speed + "px";
-                console.log(distance);
-            } else {
-                 clearInterval(frames);
-            }
+                racerArray[0].raceSpeed += Math.floor(Math.random() * 11);
+                racerArray[1].raceSpeed += Math.floor(Math.random() * 11);
+                racerArray[2].raceSpeed += Math.floor(Math.random() * 11);
+      
+                racer1Image.style.left = racerArray[0].raceSpeed + "px";
+                racer2Image.style.left = racerArray[1].raceSpeed + "px";
+                racer3Image.style.left = racerArray[2].raceSpeed + "px";
+
+                if (racerArray[0].raceSpeed >= 750)
+                {
+                    stoplight2.src = racerArray[0].source;
+                    stoplight2.width = 300;
+                    clearInterval(frames);
+                }
+                if (racerArray[1].raceSpeed >= 750)
+                {
+                    stoplight2.src = racerArray[1].source;
+                    stoplight2.width = 300;
+                    clearInterval(frames);
+                }
+                if (racerArray[2].raceSpeed >= 750)
+                {
+                    stoplight2.src = racerArray[2].source;
+                    stoplight2.width = 300;
+                    clearInterval(frames);
+                }
+
+                stoplight2.addEventListener("click", function() 
+                {
+                var racer1Image = document.getElementById("racer1");
+                 var racer2Image = document.getElementById("racer2");
+                 var racer3Image = document.getElementById("racer3");
+                 racer1Image.style.left = 0 + "px";
+                 racer2Image.style.left = 0;
+                 racer3Image.style.left = 0;
+                 stoplight.src = "Images/red.png";
+                })
         }
+    }
 }
+
+                
