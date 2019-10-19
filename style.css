@@ -2,6 +2,10 @@ body {
     margin: 0px;
     padding: 0px;
     background-color: black;
+    background-image: url("Images/street3.jpg");
+    background-repeat: repeat-x;
+}
+
 }
 .raceArea {
     position: relative;
@@ -12,28 +16,19 @@ body {
 #racer1 {
     padding-left: 80px;
     position: absolute;
-    bottom: 75px;
+    bottom: 800px;
 }
 
 #racer2 {
     padding-left: 80px;
     position: absolute;
-    bottom: 50px;
+    bottom: 725px;
 }
 
 #racer3 {
     padding-left: 80px;
     position: absolute;
-    bottom: 25px;
-}
-
-#background {
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
-    max-width: 100%;
-    max-height: 100vh;
-    height: auto;
+    bottom: 650px;
 }
 
 #stoplight {

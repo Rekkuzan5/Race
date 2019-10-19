@@ -29,7 +29,7 @@ function startRace() {
     stoplight.src = "Images/green.png";
     var stoplight2 = document.getElementById("stoplight2");
 
-    var distance = 0;
+    var distance = 1300;
     var racer1Image = document.getElementById("racer1");
     var racer2Image = document.getElementById("racer2");
     var racer3Image = document.getElementById("racer3");
@@ -37,8 +37,8 @@ function startRace() {
         var frames = setInterval(movement, 20);
         function movement()
         {
-            
-            if (racerArray[0].racerSpeed < 750 || racerArray[1].raceSpeed <750 || racerArray[2].raceSpeed < 750)
+        
+            if (racerArray[0].racerSpeed < distance || racerArray[1].raceSpeed < distance || racerArray[2].raceSpeed < distance)
             {
                 racerArray[0].raceSpeed += Math.floor(Math.random() * 11);
                 racerArray[1].raceSpeed += Math.floor(Math.random() * 11);
@@ -48,19 +48,19 @@ function startRace() {
                 racer2Image.style.left = racerArray[1].raceSpeed + "px";
                 racer3Image.style.left = racerArray[2].raceSpeed + "px";
 
-                if (racerArray[0].raceSpeed >= 750)
+                if (racerArray[0].raceSpeed >= distance)
                 {
                     stoplight2.src = racerArray[0].source;
                     stoplight2.width = 300;
                     clearInterval(frames);
                 }
-                if (racerArray[1].raceSpeed >= 750)
+                if (racerArray[1].raceSpeed >= distance)
                 {
                     stoplight2.src = racerArray[1].source;
                     stoplight2.width = 300;
                     clearInterval(frames);
                 }
-                if (racerArray[2].raceSpeed >= 750)
+                if (racerArray[2].raceSpeed >= distance)
                 {
                     stoplight2.src = racerArray[2].source;
                     stoplight2.width = 300;
